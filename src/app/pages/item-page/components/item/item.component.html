@@ -1,0 +1,133 @@
+<div class="item">
+	<div class="item__container">
+		<div class="item__images-container">
+			<ng-container *ngFor="let item of item.images">
+				<div class="item__image-container">
+					<img src="assets/images/item-page-image.png" alt="" class="item__image">
+				</div>
+			</ng-container>
+		</div>
+
+		<div class="item__content">
+			<h1 class="item__title">{{ item.title }}</h1>
+
+			<div class="item__price">{{ item.price }}</div>
+
+			<div class="item__colors colors">
+				<ul class="colors__list">
+					<ng-container *ngFor="let color of item.colors">
+						<li class="colors__item" [ngClass]="{ 'colors__item--active': color === activeColor }" [style]="'background-color:' + color.color + ';'" (click)="selectColor(color)"></li>
+					</ng-container>
+				</ul>
+
+				<div class="colors__selected-color" *ngIf="activeColor">{{ activeColor.name }}</div>
+			</div>
+
+			<div class="item__sizes sizes">
+				<ng-container *ngFor="let size of item.sizes">
+					<div class="sizes__item" (click)="selectSize(size)" [ngClass]="{ 'sizes__item--active': activeSize === size, 'sizes__item--disabled': size.available === 0 }">
+						<div class="sizes__name">{{ size.name }}</div>
+
+						<img src="assets/icons/letter-icon.svg " alt="" class="sizes__icon" *ngIf="size.available === 0">
+
+						<div class="sizes__status" *ngIf="size.available > 0 && size.available <= 3">Закінчується</div>
+					</div>
+				</ng-container>
+			</div>
+
+			<button class="item__button">додати до кошику</button>
+
+			<div class="item__about about">
+				<div class="about__title">Про товар</div>
+
+				<ul class="about__list">
+					<ng-container *ngFor="let item of aboutList">
+						<li class="about__list-item">{{ item.text }}</li>
+					</ng-container>
+				</ul>
+			</div>
+
+			<div class="item__info-buttons">
+				<button class="item__info-button">обміри виробу</button>
+				<button class="item__info-button">матеріал | догляд</button>
+				<button class="item__info-button">нотатки стиліста</button>
+				<button class="item__info-button">доставка | обмін та повернення</button>
+				<button class="item__info-button">наявність в offline-просторі</button>
+			</div>
+
+			<div class="item__style-with style-with">
+				<div class="style-with__title">стилізувати з</div>
+
+				<ul class="style-with__list">
+					<li class="style-with__item">
+						<a routerLink="" class="style-with__link">
+							<img src="assets/images/item-page-image.png" alt="" class="style-with__image">
+						</a>
+					</li>
+
+					<li class="style-with__item">
+						<a routerLink="" class="style-with__link">
+							<img src="assets/images/home-page.png" alt="" class="style-with__image">
+						</a>
+					</li>
+
+					<li class="style-with__item">
+						<a routerLink="" class="style-with__link">
+							<img src="assets/images/category-item.jpeg" alt="" class="style-with__image">
+						</a>
+					</li>
+
+					<li class="style-with__item">
+						<a routerLink="" class="style-with__link">
+							<img src="assets/images/home-page-about.png" alt="" class="style-with__image">
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<div class="item__recommendation recommendation">
+		<h4 class="recommendation__title">також вас може зацікавити</h4>
+
+		<ul class="recommendation__list">
+			<li class="recommendation__item">
+				<app-card [item]="item"></app-card>
+			</li>
+
+			<li class="recommendation__item">
+				<app-card [item]="item"></app-card>
+			</li>
+
+			<li class="recommendation__item">
+				<app-card [item]="item"></app-card>
+			</li>
+
+			<li class="recommendation__item">
+				<app-card [item]="item"></app-card>
+			</li>
+		</ul>
+	</div>
+
+	<div class="item__recommendation recommendation">
+		<h4 class="recommendation__title">нещодавно переглянуті товари</h4>
+
+		<ul class="recommendation__list">
+			<li class="recommendation__item">
+				<app-card [item]="item"></app-card>
+			</li>
+
+			<li class="recommendation__item">
+				<app-card [item]="item"></app-card>
+			</li>
+
+			<li class="recommendation__item">
+				<app-card [item]="item"></app-card>
+			</li>
+
+			<li class="recommendation__item">
+				<app-card [item]="item"></app-card>
+			</li>
+		</ul>
+	</div>
+</div>

@@ -1,0 +1,54 @@
+<div class="filters">
+	<div class="filters__content">
+		<div class="filters__item" *ngIf="filters.sizes.list.length > 0">
+			<div class="filters__title">{{ filters.sizes.title }}</div>
+
+			<ul class="filters__list">
+				<ng-container *ngFor="let size of filters.sizes.list">
+					<li class="filters__list-item" (click)="clickOnFilter(size)">
+						{{ size.name }}
+					</li>
+				</ng-container>
+			</ul>
+		</div>
+
+		<div class="filters__item" *ngIf="filters.categories.list.length > 0">
+			<div class="filters__title">{{ filters.categories.title }}</div>
+
+			<ul class="filters__list">
+				<ng-container *ngFor="let category of filters.categories.list; let i = index;">
+					<li class="filters__list-item" (click)="clickOnFilter(category)" [ngClass]="{ 'filters__list-item--hide': i > 3 && !isCategoriesExpanded }">
+						{{ category.name }}
+					</li>
+				</ng-container>
+			</ul>
+
+			<div class="filters__open-more" *ngIf="filters.categories.list.length > 4" (click)="showHideMoreCategories()">
+				{{ isCategoriesExpanded ? '-' : '+' }}{{ filters.categories.list.length - 4 }} категорій
+			</div>
+		</div>
+
+		<div class="filters__item" *ngIf="filters.colors.list.length > 0">
+			<div class="filters__title">{{ filters.colors.title }}</div>
+
+			<ul class="filters__list">
+				<ng-container *ngFor="let color of filters.colors.list; let i = index;">
+					<li class="filters__list-item filters__list-item--color" (click)="clickOnFilter(color)" [ngClass]="{ 'filters__list-item--hide': i > 5 && !isColorsExpanded }">
+						<div class="filters__list-item-color" [style]="'background-color: ' + color.color + ';'"></div>
+						{{ color.name }}
+					</li>
+				</ng-container>
+			</ul>
+
+			<div class="filters__open-more" *ngIf="filters.colors.list.length > 6" (click)="showHideMoreColors()">
+				{{ isColorsExpanded ? '-' : '+' }}{{ filters.colors.list.length - 6 }} кольорів
+			</div>
+		</div>
+	</div>
+
+	<div class="filters__buttons">
+		<button class="filters__button" *ngIf="!isFiltersChosen">показати 48 товарів</button>
+		<button class="filters__button filters__button--50" *ngIf="isFiltersChosen">скинути фільтри</button>
+		<button class="filters__button filters__button--50 filters__button--dark" *ngIf="isFiltersChosen">показати 4 товари</button>
+	</div>
+</div>

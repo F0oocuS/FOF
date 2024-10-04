@@ -1,0 +1,11 @@
+<div class="category-page">
+	<h2 class="category-page__title">{{ title }}</h2>
+
+	<div class="category-page__list" *ngIf="categoryItems.length">
+		<div class="category-page__item" *ngFor="let categoryItem of categoryItems">
+			<app-category-item [categoryItem]="categoryItem"></app-category-item>
+		</div>
+	</div>
+
+	<button *ngIf="nextCategoryPageUrl" (click)="onLoadMore()" class="category-page__load-more">Load more</button>
+</div>

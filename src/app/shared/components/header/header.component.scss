@@ -1,0 +1,296 @@
+.pre-header {
+	padding: 10px;
+	font-family: 'ProximaNova-Regular', sans-serif;
+	font-size: 12px;
+	font-weight: 400;
+	line-height: 16px;
+	color: #59351d;
+	letter-spacing: 0.07em;
+	text-align: center;
+	text-transform: uppercase;
+	background-color: #e2eff3;
+}
+
+.header {
+	position: relative;
+	background: #fff;
+
+	&--show-mobile {
+		display: none;
+	}
+
+	&__container {
+		margin: 0 auto;
+		max-width: 1440px;
+		width: 100%;
+	}
+
+	&__content {
+		padding: 0 20px;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	&__logo-container {
+		width: 250px;
+		height: 34px;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+
+	&__logo {
+		width: 100%;
+		height: 100%;
+		object-fit: contain;
+	}
+
+	&__lists {
+		display: flex;
+	}
+
+	&__lists-item {
+		&:hover {
+			.header__dropdown {
+				display: block;
+			}
+
+			.header__lists-link {
+				color: #59351d;
+				text-shadow: 0 0 .5px #59351d;
+			}
+		}
+	}
+
+	&__lists-link {
+		padding: 25px 10px;
+		display: block;
+		font-family: 'ProximaNova-Regular', sans-serif;
+		font-size: 12px;
+		font-weight: 400;
+		line-height: 17px;
+		letter-spacing: 0.07em;
+		color: #836c5d;
+		text-transform: uppercase;
+		text-decoration: none;
+		transition: .3s ease all;
+		cursor: pointer;
+	}
+
+	&__dropdown {
+		display: none;
+	}
+
+	&__list {
+		display: flex;
+		flex-direction: column;
+		gap: 18px;
+		min-width: 200px;
+		font-size: 12px;
+		line-height: 17px;
+		letter-spacing: 0.07em;
+		text-transform: uppercase;
+	}
+
+	&__list-title {
+		font-family: 'ProximaNova-Semibold', sans-serif;
+		font-weight: 700;
+		color: #59351d;
+
+		&--danger {
+			color: #a90001;
+		}
+	}
+
+	&__list-link {
+		font-family: 'ProximaNova-Regular', sans-serif;
+		font-weight: 400;
+		color: #59351d;
+		text-decoration: none;
+
+		&:hover {
+			letter-spacing: 0.07em;
+			text-decoration: underline;
+		}
+	}
+
+	&__account {
+		display: flex;
+		align-items: center;
+		gap: 50px;
+	}
+
+	&__mobile-dropdown {
+		display: none;
+		width: 100%;
+		height: calc(100vh - 90px);
+		position: absolute;
+		top: 100%;
+		left: 0;
+		background-color: #fff;
+
+		&--open {
+			display: block;
+		}
+	}
+}
+
+.tabs {
+	padding: 20px 16px;
+	height: 100%;
+
+	&__header {
+		margin-bottom: 25px;
+		display: flex;
+		justify-content: space-between;
+	}
+
+	&__header-item {
+		font-family: 'ProximaNova-Semibold', sans-serif;
+		font-size: 12px;
+		font-weight: 600;
+		line-height: 14px;
+		letter-spacing: 0.05em;
+		color: #9c877a;
+		text-transform: uppercase;
+		text-decoration: none;
+		cursor: pointer;
+
+		&--active, &:hover {
+			color: #59351d;
+		}
+
+		&--active {
+			text-decoration: underline;
+		}
+	}
+
+	&__content {
+		height: calc(100% - 39px);
+		overflow-y: auto;
+	}
+}
+
+.icons-list {
+	display: flex;
+	align-items: center;
+	gap: 5px;
+
+	&--show-mobile {
+		display: none;
+	}
+
+	&__item {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 30px;
+		height: 30px;
+		border-radius: 15px;
+		transition: .3s ease all;
+		cursor: pointer;
+
+		&:hover {
+			background-color: #eee;
+		}
+	}
+
+	&__icon {
+		width: 18px;
+		height: 18px;
+	}
+}
+
+.dropdown {
+	width: 100%;
+	position: absolute;
+	top: 100%;
+	right: 0;
+	background-color: #fff;
+
+	&__container {
+		margin: 0 auto;
+		padding: 40px 30px;
+		display: flex;
+		gap: 80px;
+		width: 100%;
+		height: 100%;
+		max-width: 1440px;
+	}
+
+	&__new-collection {
+		margin-left: auto;
+		width: 450px;
+		height: 250px;
+		position: relative;
+		background-color: #FF6F6F;
+	}
+
+	&__new-collection-image {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+
+	&__new-collection-link {
+		position: absolute;
+		left: 15px;
+		bottom: 15px;
+		font-family: 'Charpentier-55-Normal', sans-serif;
+		font-size: 13px;
+		font-weight: 400;
+		line-height: 13px;
+		letter-spacing: 0.05em;
+		color: #59351d;
+		text-transform: uppercase;
+		text-decoration: none;
+	}
+}
+
+@media(max-width: 767px) {
+	.pre-header {
+		font-size: 10px;
+		font-weight: 300;
+		line-height: 14px;
+		letter-spacing: 0.05em;
+	}
+
+	.header {
+		&--show-mobile {
+			display: block;
+		}
+
+		&--hide-mobile {
+			display: none;
+		}
+
+		&__content {
+			padding: 13px 16px;
+		}
+
+		&__logo-container {
+			width: 170px;
+			height: 24px;
+		}
+
+		&__lists {
+			display: none;
+		}
+	}
+
+	.tabs {
+		&__content {
+			display: flex;
+			flex-direction: column;
+			gap: 35px;
+		}
+	}
+
+	.icons-list {
+		&--show-mobile {
+			display: flex;
+		}
+	}
+}

@@ -1,0 +1,29 @@
+<div class="search">
+	<div class="search__header">
+		<input type="text" class="search__input" placeholder="введіть запит для пошуку" [(ngModel)]="searchTextRequest">
+	</div>
+
+	<div class="search__keyword" *ngIf="searchTextRequest.length > 3 && searchTextRequest !== banWord">Спідниця</div>
+
+	<ul class="search__result" *ngIf="searchTextRequest.length > 3 && searchTextRequest !== banWord">
+		<li class="search__item" *ngFor="let item of items;">
+			<app-card [item]="item" [isSmallView]="true"></app-card>
+		</li>
+	</ul>
+
+	<div class="search__not-found" *ngIf="searchTextRequest === banWord">
+		На жаль, за вашим запитом товарів не знайдено. Спробуйте змінити критерії пошуку або перегляньте інші категорії.
+	</div>
+
+	<div class="search__recommendation" *ngIf="searchTextRequest === banWord || searchTextRequest.length <= 3">
+		<div class="search__recommendation-title">Рекомендації</div>
+
+		<ul class="search__recommendation-list">
+			<ng-container *ngFor="let item of searchRecommendation">
+				<li class="search__recommendation-item">
+					<a routerLink="/" class="search__recommendation-link">{{ item.name }}</a>
+				</li>
+			</ng-container>
+		</ul>
+	</div>
+</div>

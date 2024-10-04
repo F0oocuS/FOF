@@ -1,0 +1,9 @@
+<ul class="breadcrumbs">
+	<ng-container *ngFor="let item of list; let i = index">
+		<li class="breadcrumbs__item">
+			<a routerLink="/" class="breadcrumbs__link">{{ item.title }}</a>
+
+			<img src="assets/icons/arrow.svg" alt="" class="breadcrumbs__icon" *ngIf="i !== list.length - 1">
+		</li>
+	</ng-container>
+</ul>

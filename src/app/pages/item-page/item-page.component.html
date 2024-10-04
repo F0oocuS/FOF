@@ -1,0 +1,11 @@
+<div class="item-page">
+	<div class="item-page__container">
+		<div class="item-page__breadcrumbs" *ngIf="breadcrumbs">
+			<app-breadcrumbs [list]="breadcrumbs"></app-breadcrumbs>
+		</div>
+
+		<div class="item-page__content" *ngIf="item">
+			<app-item [item]="item"></app-item>
+		</div>
+	</div>
+</div>

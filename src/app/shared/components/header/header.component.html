@@ -1,0 +1,273 @@
+<ng-container>
+	<div class="pre-header">New collection</div>
+
+	<header class="header">
+		<div class="header__container">
+			<div class="header__content">
+				<div class="header__icons-list icons-list icons-list--show-mobile">
+					<div class="icons-list__item" (click)="toggleMenu()">
+						<img *ngIf="!isOpenMenu" src="assets/icons/burger-icon.svg" alt="">
+						<img *ngIf="isOpenMenu" src="assets/icons/close-icon.svg" alt="">
+					</div>
+
+					<div class="icons-list__item">
+						<img src="assets/icons/search-icon.svg" class="icons-list__icon" alt="">
+					</div>
+				</div>
+
+				<ul class="header__lists">
+					<li class="header__lists-item">
+						<div class="header__lists-link">Каталог</div>
+
+						<div class="header__dropdown dropdown">
+							<div class="dropdown__container">
+								<ul class="header__list">
+									<li class="header__list-item header__list-title">Нові надходження</li>
+
+									<li class="header__list-item">
+										<a routerLink="/catalog/power-place" class="header__list-link">Power Place</a>
+									</li>
+
+									<li class="header__list-item">
+										<a routerLink="/catalog/12" class="header__list-link">Seasun</a>
+									</li>
+
+									<li class="header__list-item">
+										<a routerLink="/catalog/134" class="header__list-link">Summerdays</a>
+									</li>
+								</ul>
+
+								<ul class="header__list">
+									<li class="header__list-item header__list-title">Bestsellers</li>
+
+									<ng-container *ngFor="let item of longList.slice(0, 6)">
+										<li class="header__list-item">
+											<a routerLink="/catalog/power-place" class="header__list-link">{{ item.title }}</a>
+										</li>
+									</ng-container>
+								</ul>
+
+								<ul class="header__list">
+									<ng-container *ngFor="let item of longList.slice(6)">
+										<li class="header__list-item">
+											<a routerLink="/catalog/power-place" class="header__list-link">{{ item.title }}</a>
+										</li>
+									</ng-container>
+								</ul>
+
+								<ul class="header__list">
+									<li class="header__list-item header__list-title header__list-title--danger">Special price</li>
+
+									<li class="header__list-item">
+										<a routerLink="/catalog/power-place" class="header__list-link">Power Place</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</li>
+
+					<li class="header__lists-item">
+						<div class="header__lists-link">Про бренд</div>
+
+						<div class="header__dropdown dropdown">
+							<div class="dropdown__container">
+								<ul class="header__list">
+									<li class="header__list-item">
+										<a routerLink="/" class="header__list-link">Філософія</a>
+									</li>
+
+									<li class="header__list-item">
+										<a routerLink="/" class="header__list-link">матеріали</a>
+									</li>
+
+									<li class="header__list-item">
+										<a routerLink="/" class="header__list-link">колекції</a>
+									</li>
+								</ul>
+
+								<ul class="header__list">
+									<li class="header__list-item">
+										<a routerLink="/" class="header__list-link">fof club</a>
+									</li>
+
+									<li class="header__list-item">
+										<a routerLink="/" class="header__list-link">система лояльності</a>
+									</li>
+
+									<li class="header__list-item">
+										<a routerLink="/" class="header__list-link">замовлення</a>
+									</li>
+
+									<li class="header__list-item">
+										<a routerLink="/" class="header__list-link">оплата | доставка</a>
+									</li>
+
+									<li class="header__list-item">
+										<a routerLink="/" class="header__list-link">повернення | обмін</a>
+									</li>
+
+									<li class="header__list-item">
+										<a routerLink="/" class="header__list-link">розмірна сітка | підібрати розмір</a>
+									</li>
+								</ul>
+
+								<ul class="header__list">
+									<li class="header__list-item">
+										<a routerLink="/" class="header__list-link">Контакти</a>
+									</li>
+
+									<li class="header__list-item">
+										<a routerLink="/" class="header__list-link">concept store</a>
+									</li>
+
+									<li class="header__list-item">
+										<a routerLink="/" class="header__list-link">Вакансії</a>
+									</li>
+								</ul>
+
+								<div class="dropdown__new-collection">
+									<img src="assets/images/new-collection.png" class="dropdown__new-collection-image" alt="">
+
+									<a href="/" class="dropdown__new-collection-link">Нова колекція</a>
+								</div>
+							</div>
+						</div>
+					</li>
+
+					<li class="header__lists-item">
+						<div class="header__lists-link" (click)="openSearchSidebar()">Пошук</div>
+					</li>
+				</ul>
+
+				<a routerLink="/" class="header__logo-container">
+					<img src="assets/icons/logo-full.svg" alt="" class="header__logo">
+				</a>
+
+				<div class="header__account">
+					<ul class="header__lists">
+						<li class="header__lists-item">
+							<a href="/" class="header__lists-link">Аккаунт</a>
+						</li>
+					</ul>
+
+					<div class="header__icons-list icons-list">
+						<a href="" class="icons-list__item">
+							<img src="assets/icons/heart-icon.svg" alt="" class="icons-list__icon">
+						</a>
+
+						<a href="" class="icons-list__item">
+							<img src="assets/icons/cart-icon.svg" alt="" class="icons-list__icon">
+						</a>
+					</div>
+				</div>
+			</div>
+
+			<div class="header__mobile-dropdown" [ngClass]="{ 'header__mobile-dropdown--open': isOpenMenu }">
+				<div class="header__tabs tabs">
+					<div class="tabs__header">
+						<div class="tabs__header-item" [ngClass]="{ 'tabs__header-item--active': activeTab === 'catalog' }" (click)="setActiveTab('catalog')">Каталог</div>
+						<div class="tabs__header-item" [ngClass]="{ 'tabs__header-item--active': activeTab === 'about' }" (click)="setActiveTab('about')">Про бренд</div>
+						<a routerLink="/" class="tabs__header-item">Акаунт</a>
+					</div>
+
+					<div class="tabs__content" *ngIf="activeTab === 'catalog'">
+						<ul class="header__list">
+							<li class="header__list-item header__list-title">Нові надходження</li>
+
+							<li class="header__list-item">
+								<a routerLink="/" class="header__list-link">Power Place</a>
+							</li>
+
+							<li class="header__list-item">
+								<a routerLink="/" class="header__list-link">Seasun</a>
+							</li>
+
+							<li class="header__list-item">
+								<a routerLink="/" class="header__list-link">Summerdays</a>
+							</li>
+						</ul>
+
+						<ul class="header__list">
+							<li class="header__list-item header__list-title">Bestsellers</li>
+
+							<ng-container *ngFor="let item of longList">
+								<li class="header__list-item">
+									<a routerLink="/" class="header__list-link">{{ item.title }}</a>
+								</li>
+							</ng-container>
+						</ul>
+
+						<ul class="header__list">
+							<li class="header__list-item header__list-title header__list-title--danger">Special price</li>
+
+							<li class="header__list-item">
+								<a routerLink="/" class="header__list-link">Power Place</a>
+							</li>
+						</ul>
+					</div>
+
+					<div class="tabs__content" *ngIf="activeTab === 'about'">
+						<ul class="header__list">
+							<li class="header__list-item">
+								<a routerLink="/" class="header__list-link">Філософія</a>
+							</li>
+
+							<li class="header__list-item">
+								<a routerLink="/" class="header__list-link">матеріали</a>
+							</li>
+
+							<li class="header__list-item">
+								<a routerLink="/" class="header__list-link">колекції</a>
+							</li>
+						</ul>
+
+						<ul class="header__list">
+							<li class="header__list-item">
+								<a routerLink="/" class="header__list-link">fof club</a>
+							</li>
+
+							<li class="header__list-item">
+								<a routerLink="/" class="header__list-link">система лояльності</a>
+							</li>
+
+							<li class="header__list-item">
+								<a routerLink="/" class="header__list-link">замовлення</a>
+							</li>
+
+							<li class="header__list-item">
+								<a routerLink="/" class="header__list-link">оплата | доставка</a>
+							</li>
+
+							<li class="header__list-item">
+								<a routerLink="/" class="header__list-link">повернення | обмін</a>
+							</li>
+
+							<li class="header__list-item">
+								<a routerLink="/" class="header__list-link">розмірна сітка | підібрати розмір</a>
+							</li>
+						</ul>
+
+						<ul class="header__list">
+							<li class="header__list-item">
+								<a routerLink="/" class="header__list-link">Контакти</a>
+							</li>
+
+							<li class="header__list-item">
+								<a routerLink="/" class="header__list-link">concept store</a>
+							</li>
+
+							<li class="header__list-item">
+								<a routerLink="/" class="header__list-link">Вакансії</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<app-sidebar [isSidebarOpen]="isSearchSidebarOpen" (onSidebarClose)="closeSearchSidebar()" title="Пошук">
+			<app-search></app-search>
+		</app-sidebar>
+	</header>
+</ng-container>
+

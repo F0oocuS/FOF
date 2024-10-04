@@ -1,0 +1,57 @@
+<div class="home-page">
+	<div class="home-page__container">
+		<div class="home-page__banner">
+			<img src="assets/images/home-page.png" alt="" class="home-page__image">
+
+			<div class="home-page__banner-info">
+				<h1 class="home-page__title">Нова колекція</h1>
+
+				<a routerLink="/" class="home-page__bay-now">Купити зараз</a>
+			</div>
+		</div>
+
+		<ul class="home-page__list">
+			<li class="home-page__list-item" *ngFor="let item of navList">
+				<a href="" class="home-page__list-link">{{ item.title }}</a>
+			</li>
+		</ul>
+
+		<section class="home-page__section">
+			<img src="assets/images/home-page.png" alt="" class="home-page__image">
+
+			<h2 class="home-page__section-title">светри | кардигани</h2>
+		</section>
+
+		<section class="home-page__section">
+			<img src="assets/images/home-page.png" alt="" class="home-page__image">
+
+			<h2 class="home-page__section-title">футболки | поло</h2>
+		</section>
+
+		<section class="home-page__section">
+			<img src="assets/images/home-page.png" alt="" class="home-page__image">
+
+			<h2 class="home-page__section-title home-page__section-title--dark">верхній одяг</h2>
+		</section>
+
+		<div class="home-page__about about">
+			<div class="about__content">
+				<h3 class="about__title">Про бренд</h3>
+
+				<p class="about__description">Friends of Fashion - український бренд елегантного та стильного базового одягу.</p>
+				<p class="about__description">Наша ідея – допомогти створити лаконічний та продуманий базовий гардероб  з яскравими акцентами, який можна швидко оновити 1-2 свіжими трендовими речами  та почуватися по-новому.</p>
+				<p class="about__description">Ми вважаємо, що формула стильного образу – це вміле поєднання простого базового одягу з вкрапленням модних трендів, тому розробляємо наші колекції з їх глибоким аналізом. При пошитті вибираємо натуральні матеріали, так як хочемо, щоб носити  і купувати речі від Friends of Fashion вам було приємно.</p>
+
+				<a routerLink="/" class="about__button">Дізнатися більше</a>
+
+				<div class="about__signature-container">
+					<img src="assets/icons/signature.svg" alt="" class="about__signature">
+				</div>
+			</div>
+
+			<div class="about__image-container">
+				<img src="assets/images/home-page-about.png" alt="" class="about__image">
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,129 @@
+.filters {
+	display: flex;
+	flex-direction: column;
+	gap: 35px;
+	height: 100%;
+
+	&__content {
+		padding: 0 10px;
+		display: flex;
+		flex-direction: column;
+		gap: 25px;
+		height: 100%;
+		overflow-y: auto;
+	}
+
+	&__item {
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+	}
+
+	&__title {
+		font-family: 'ProximaNova-Semibold', sans-serif;
+		font-size: 12px;
+		font-weight: 600;
+		line-height: 16px;
+		letter-spacing: 0.07em;
+		color: #59351d;
+		text-align: center;
+		text-transform: uppercase;
+	}
+
+	&__list {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 8px;
+	}
+
+	&__list-item {
+		padding: 12px;
+		width: calc(50% - 4px);
+		position: relative;
+		font-family: 'ProximaNova-Regular', sans-serif;
+		font-size: 12px;
+		font-weight: 400;
+		line-height: 16px;
+		letter-spacing: 0.07em;
+		text-align: center;
+		color: #59351d;
+		text-transform: uppercase;
+		border: 1px solid #9c877a;
+		cursor: pointer;
+		transition: .3s ease all;
+
+		&:hover {
+			border-color: #59351d;
+			background-color: #fefef2;
+		}
+
+		&--hide {
+			display: none;
+		}
+
+		&--color {
+			padding-left: 16px;
+			text-align: left;
+		}
+	}
+
+	&__list-item-color {
+		position: absolute;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		width: 7px;
+	}
+
+	&__open-more {
+		font-family: 'ProximaNova-Regular', sans-serif;
+		font-size: 12px;
+		font-weight: 400;
+		line-height: 16px;
+		letter-spacing: 0.07em;
+		color: #59351d;
+		text-transform: uppercase;
+		cursor: pointer;
+	}
+
+	&__buttons {
+		margin-top: auto;
+		background-color: #fff;
+	}
+
+	&__button {
+		padding: 18px;
+		width: 100%;
+		font-family: 'ProximaNova-Regular', sans-serif;
+		font-size: 12px;
+		font-weight: 400;
+		line-height: 16px;
+		letter-spacing: 0.07em;
+		color: #59351d;
+		text-transform: uppercase;
+		border: 1px solid #59351d;
+		background-color: #fff;
+		cursor: pointer;
+
+		&--50 {
+			width: 50%;
+		}
+
+		&--dark {
+			background-color: #59351d;
+			color: #fff;
+		}
+	}
+}
+
+@media(max-width: 767px) {
+	.filters {
+		&__content {
+			gap: 30px;
+		}
+
+		&__list-item {
+			font-size: 11px;
+		}
+	}
+}

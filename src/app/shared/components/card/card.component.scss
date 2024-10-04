@@ -1,0 +1,188 @@
+.card {
+	&--small-view {
+		.card__header {
+			margin-bottom: 0;
+			height: 260px;
+		}
+
+		.card__labels {
+			top: 15px;
+			left: 15px;
+		}
+
+		.card__label {
+			padding: 2px 5px;
+			font-size: 8px;
+			line-height: 12px;
+		}
+
+		.card__button {
+			padding: 8px;
+			font-size: 8px;
+			line-height: 12px;
+		}
+
+		.card__content {
+			padding: 10px 15px 20px;
+		}
+
+		.card__title {
+			padding-right: 0;
+			min-height: auto;
+			font-size: 10px;
+			line-height: 14px;
+		}
+
+		.card__price-item {
+			font-size: 12px;
+			line-height: 16px;
+		}
+	}
+
+	&__header {
+		margin-bottom: 15px;
+		height: 440px;
+		position: relative;
+
+		&--disabled {
+			background-color: #e6e6e6;
+		}
+	}
+
+	&__labels {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 10px;
+		position: absolute;
+		top: 20px;
+		left: 20px;
+	}
+
+	&__label {
+		padding: 5px 15px;
+		font-family: 'ProximaNova-Regular', sans-serif;
+		font-size: 12px;
+		font-weight: 400;
+		line-height: 16px;
+		letter-spacing: 0.03em;
+		color: #59351d;
+		background-color: #e2eff3;
+
+		&--sale {
+			color: #fff;
+			background-color: #fa6512;
+		}
+	}
+
+	&__image {
+		width: 100%;
+		height: 100%;
+		object-fit: contain;
+	}
+
+	&__wishlist-toggle {
+		position: absolute;
+		top: 20px;
+		right: 20px;
+		cursor: pointer;
+	}
+
+	&__button {
+		padding: 15px;
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		width: 100%;
+		font-family: 'ProximaNova-Regular', sans-serif;
+		font-size: 12px;
+		font-weight: 400;
+		line-height: 16px;
+		letter-spacing: 0.07em;
+		color: #fff;
+		text-transform: uppercase;
+		background-color: #59351d;
+		border: none;
+		cursor: pointer;
+	}
+
+	&__title {
+		margin-bottom: 10px;
+		padding-right: 50px;
+		display: block;
+		min-height: 40px;
+		font-family: 'ProximaNova-Regular', sans-serif;
+		font-size: 12px;
+		font-weight: 400;
+		line-height: 16px;
+		letter-spacing: 0.07em;
+		color: #59351d;
+		text-transform: uppercase;
+		text-decoration: none;
+	}
+
+	&__price {
+		display: flex;
+		align-items: center;
+		gap: 15px;
+	}
+
+	&__price-item {
+		font-family: 'ProximaNova-Semibold', sans-serif;
+		font-size: 14px;
+		font-weight: 600;
+		line-height: 16px;
+		letter-spacing: 0.05em;
+		color: #59351d;
+		text-transform: uppercase;
+
+		&--discount {
+			font-weight: 400;
+			line-height: 20px;
+			color: #9c877a;
+			text-decoration: line-through;
+		}
+	}
+}
+
+@media(max-width: 767px) {
+	.card {
+		&__header {
+			margin-bottom: 0;
+			height: 260px;
+		}
+
+		&__labels {
+			top: 15px;
+			left: 15px;
+		}
+
+		&__label {
+			padding: 2px 5px;
+			font-size: 8px;
+			line-height: 12px;
+		}
+
+		&__button {
+			padding: 8px;
+			font-size: 8px;
+			line-height: 12px;
+		}
+
+		&__content {
+			padding: 10px 15px 20px;
+		}
+
+		&__title {
+			padding-right: 0;
+			min-height: auto;
+			font-size: 10px;
+			line-height: 14px;
+		}
+
+		&__price-item {
+			font-size: 12px;
+			line-height: 16px;
+		}
+	}
+}

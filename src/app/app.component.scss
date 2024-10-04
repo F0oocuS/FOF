@@ -1,0 +1,29 @@
+.app {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+
+	&__header {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		z-index: 1000;
+	}
+
+	&__main {
+		padding-top: 103px;
+	}
+
+	&__footer {
+		margin-top: auto;
+	}
+}
+
+@media(max-width: 767px) {
+	.app {
+		&__main {
+			padding-top: 90px;
+		}
+	}
+}

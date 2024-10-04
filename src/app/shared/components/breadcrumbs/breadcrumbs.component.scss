@@ -1,0 +1,31 @@
+.breadcrumbs {
+	display: flex;
+	gap: 4px;
+
+	&__item {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 4px;
+	}
+
+	&__link {
+		display: flex;
+		align-items: center;
+		font-family: 'ProximaNova-Light', sans-serif;
+		font-size: 10px;
+		font-weight: 300;
+		line-height: 14px;
+		letter-spacing: 0.05em;
+		text-transform: uppercase;
+		text-decoration: none;
+		color: #59351d;
+	}
+
+	&__icon {
+		margin-top: -1px;
+		width: 8px;
+		height: 8px;
+		transform: rotate(-90deg);
+	}
+}

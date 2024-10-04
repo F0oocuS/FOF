@@ -1,0 +1,48 @@
+<div class="catalog-page">
+	<div class="catalog-page__container">
+		<div class="catalog-page__breadcrumbs">
+			<app-breadcrumbs [list]="breadcrumbs"></app-breadcrumbs>
+		</div>
+
+		<h1 class="catalog-page__title">Power Place</h1>
+
+		<div class="catalog-page__menu">
+			<div class="catalog-page__filter-button" (click)="openFilters()">
+				Фільтри
+				<img src="assets/icons/arrow.svg" alt="" class="catalog-page__filter-icon">
+			</div>
+
+			<div class="catalog-page__toggle">
+				<div class="catalog-page__toggle-item" [ngClass]="{ 'catalog-page__toggle-item--active': viewMode === 'product' }" (click)="changeModeView('product')">На фоні</div>
+				<div class="catalog-page__toggle-item" [ngClass]="{ 'catalog-page__toggle-item--active': viewMode === 'model' }" (click)="changeModeView('model')">На моделі</div>
+			</div>
+
+			<div class="catalog-page__view-mode">
+				<div class="catalog-page__view-mode-item">
+					<img src="assets/icons/mode-toggle.svg" alt="">
+				</div>
+				<div class="catalog-page__view-mode-item">
+					<img src="assets/icons/mode-toggle-2.svg" alt="">
+				</div>
+			</div>
+		</div>
+
+		<ul class="catalog-page__list">
+			<ng-container *ngFor="let item of items">
+				<li class="catalog-page__item">
+					<app-card [item]="item"></app-card>
+				</li>
+			</ng-container>
+		</ul>
+
+		<div class="catalog-page__load-more">
+			<div class="catalog-page__load-more-text">
+				переглянути верхній одяг
+			</div>
+		</div>
+
+		<app-sidebar [isSidebarOpen]="isShowFilters" (onSidebarClose)="closeFilters()" title="Фільтри">
+			<app-filters [filters]="filters"></app-filters>
+		</app-sidebar>
+	</div>
+</div>
