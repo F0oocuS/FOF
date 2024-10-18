@@ -16,6 +16,7 @@ import { CommonModule } from '@angular/common';
 export class SidebarComponent {
 	@Input() title!: string;
 	@Input() isSidebarOpen: boolean = false;
+	@Input() isSidebarWide: boolean = false;
 	@Output() onSidebarClose = new EventEmitter<void>();
 
 	constructor() {}

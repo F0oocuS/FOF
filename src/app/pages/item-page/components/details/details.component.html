@@ -1,0 +1,249 @@
+<div class="details">
+	<div class="details__content">
+		<div class="details__dropdown dropdown">
+			<div class="dropdown__header" (click)="selectDropdown('sizes')">
+				<div class="dropdown__title">Обміри виробу</div>
+
+				<img src="assets/icons/arrow.svg" alt="" class="dropdown__arrow" [ngClass]="{ 'dropdown__arrow--open': this.openedDropdown === 'sizes' }">
+			</div>
+
+			<div class="dropdown__content" [ngClass]="{ 'dropdown__content--show': this.openedDropdown === 'sizes' }">
+				<div class="dropdown__item">
+					<div class="dropdown__subtitle">Параметри моделі на фото:</div>
+
+					<ul class="dropdown__list">
+						<li class="dropdown__list-item dropdown__list-item--uppercase">Ог: 82см, от: 65 см, ОС: 95 см</li>
+						<li class="dropdown__list-item dropdown__list-item--uppercase">Зріст: 178см</li>
+						<li class="dropdown__list-item dropdown__list-item--uppercase">На моделі вдягнутий розмір XS.</li>
+					</ul>
+				</div>
+
+				<div class="dropdown__item">
+					<div class="dropdown__graphic graphic">
+						<div class="graphic__item">
+							<div class="graphic__line"></div>
+							<div class="graphic__dot"></div>
+							<div class="graphic__dot graphic__dot--center"></div>
+							<div class="graphic__dot graphic__dot--right"></div>
+							<div class="graphic__text">маломірить</div>
+							<div class="graphic__text graphic__text--center">розмір в розмір</div>
+							<div class="graphic__text graphic__text--right">більшомірить</div>
+							<div class="graphic__triangle graphic__triangle--right"></div>
+						</div>
+
+						<div class="graphic__item">
+							<div class="graphic__line"></div>
+							<div class="graphic__dot"></div>
+							<div class="graphic__dot graphic__dot--center"></div>
+							<div class="graphic__dot graphic__dot--right"></div>
+							<div class="graphic__text">низька</div>
+							<div class="graphic__text graphic__text--center">середня</div>
+							<div class="graphic__text graphic__text--right">висока</div>
+							<div class="graphic__triangle"></div>
+						</div>
+
+						<div class="graphic__item">
+							<div class="graphic__line"></div>
+							<div class="graphic__dot"></div>
+							<div class="graphic__dot graphic__dot--center"></div>
+							<div class="graphic__dot graphic__dot--right"></div>
+							<div class="graphic__text">по фігурі</div>
+							<div class="graphic__text graphic__text--center">розслаблено</div>
+							<div class="graphic__text graphic__text--right">оверсайз</div>
+							<div class="graphic__triangle graphic__triangle--center"></div>
+						</div>
+					</div>
+				</div>
+
+				<div class="dropdown__item">
+					<button class="dropdown__button">
+						<img src="assets/icons/ruler-icon.svg" alt="" class="dropdown__button-icon">
+
+						size guide
+					</button>
+				</div>
+
+				<div class="dropdown__item"></div>
+			</div>
+		</div>
+
+		<div class="details__dropdown dropdown">
+			<div class="dropdown__header" (click)="selectDropdown('materials')">
+				<div class="dropdown__title">Матеріал | догляд</div>
+
+				<img src="assets/icons/arrow.svg" alt="" class="dropdown__arrow" [ngClass]="{ 'dropdown__arrow--open': this.openedDropdown === 'materials' }">
+			</div>
+
+			<div class="dropdown__content" [ngClass]="{ 'dropdown__content--show': this.openedDropdown === 'materials' }">
+				<div class="dropdown__item">
+					<div class="dropdown__subtitle">
+						<img src="assets/icons/materials-icon.svg" alt="" class="dropdown__title-icon">
+
+						Склад:
+					</div>
+
+					<ul class="dropdown__list">
+						<li class="dropdown__list-item">Виріб: 100% вовна.</li>
+						<li class="dropdown__list-item">Підкладка: 100% віскоза.</li>
+					</ul>
+				</div>
+
+				<div class="dropdown__item">
+					<div class="dropdown__subtitle">
+						<img src="assets/icons/information-icon.svg" alt="" class="dropdown__title-icon">
+
+						Інформація про матеріал:
+					</div>
+
+					<p class="dropdown__paragraph">
+						Костюмну тканину виготовили на фабриці E.Miroglio, яка є провідною європейською текстильною компанією. Виробництво знаходиться у болгарському місті Слівен і займає близько 90 000 кв.м.
+					</p>
+				</div>
+
+				<div class="dropdown__item">
+					<div class="dropdown__subtitle">
+						<img src="assets/icons/cares-icon.svg" alt="" class="dropdown__title-icon">
+
+						Догляд:
+					</div>
+
+					<ul class="dropdown__list">
+						<li class="dropdown__list-item">Машинне прання заборонено</li>
+						<li class="dropdown__list-item">Рекомендуємо скористатися послугами хімчистки</li>
+						<li class="dropdown__list-item">Прасувати при низькій температурі не більше 110°C</li>
+						<li class="dropdown__list-item">Не відбілювати</li>
+						<li class="dropdown__list-item">Барабанна сушка заборонена</li>
+					</ul>
+				</div>
+
+				<div class="dropdown__item"></div>
+			</div>
+		</div>
+
+		<div class="details__dropdown dropdown">
+			<div class="dropdown__header" (click)="selectDropdown('notes')">
+				<div class="dropdown__title">Нотатки стиліста</div>
+
+				<img src="assets/icons/arrow.svg" alt="" class="dropdown__arrow" [ngClass]="{ 'dropdown__arrow--open': this.openedDropdown === 'notes' }">
+			</div>
+
+			<div class="dropdown__content" [ngClass]="{ 'dropdown__content--show': this.openedDropdown === 'notes' }">
+				<div class="dropdown__item">
+					<p class="dropdown__paragraph">
+						ВНова модель цього сезону — жакет з акцентними деталями, що імітують білу сорочку. При бажанні ми зробили ці деталі зʼємними, щоб жакет мав більш класичний вигляд. 
+					</p>
+
+					<p class="dropdown__paragraph">
+						Виріб відмінно тримає форму, а помірний оверсайз робить його універсальним для будь-якого типу фігури.
+					</p>
+				</div>
+
+				<div class="dropdown__item"></div>
+			</div>
+		</div>
+
+		<div class="details__dropdown dropdown" >
+			<div class="dropdown__header" (click)="selectDropdown('delivery')">
+				<div class="dropdown__title">Доставка | обмін та повернення</div>
+
+				<img src="assets/icons/arrow.svg" alt="" class="dropdown__arrow" [ngClass]="{ 'dropdown__arrow--open': this.openedDropdown === 'delivery' }">
+			</div>
+
+			<div class="dropdown__content" [ngClass]="{ 'dropdown__content--show': this.openedDropdown === 'delivery' }">
+				<div class="dropdown__item">
+					<div class="dropdown__subtitle">
+						<img src="assets/icons/delivery-icon.svg" alt="" class="dropdown__title-icon">
+
+						Доставка:
+					</div>
+
+					<ul class="dropdown__list">
+						<li class="dropdown__list-item">Обробка та відправка замовлення <span class="dropdown__list-item--bold">протягом 1-3 днів</span>.</li>
+						<li class="dropdown__list-item">Обробка та відправка замовлення під час високого навантаження (вихід нової колекції/sale) <span class="dropdown__list-item--bold">протягом 7 днів</span>.</li>
+						<li class="dropdown__list-item">Відправка замовлення по передзамовленню протягом терміну, вказаногопід час оформлення.</li>
+						<li class="dropdown__list-item">Зміна статусів замовлення надходить на телефон.</li>
+						<li class="dropdown__list-item">Міжнародна доставка по всьому світу, окрім рф та рб. вартість міжнародної доставки додається окремо на етапі оформлення замовлення.</li>
+					</ul>
+				</div>
+
+				<div class="dropdown__item">
+					<div class="dropdown__subtitle">
+						<img src="assets/icons/exchange-icon.svg" alt="" class="dropdown__title-icon">
+
+						Обмін та повернення:
+					</div>
+
+					<ul class="dropdown__list">
+						<li class="dropdown__list-item">Повернення та обмін <span class="dropdown__list-item--bold">протягом 14 днів</span> з моменту відправки замовлення.</li>
+						<li class="dropdown__list-item">Безкоштовне “легке повернення” від нової пошти.</li>
+						<li class="dropdown__list-item">Вироби <span class="dropdown__list-item--bold">last piece sale</span> не підлягають поверненню.</li>
+						<li class="dropdown__list-item">Детальніше про обмін та повернення <a routerLink="/" class="dropdown__list-link">тут</a></li>
+					</ul>
+				</div>
+
+				<div class="dropdown__item"></div>
+			</div>
+		</div>
+
+		<div class="details__dropdown dropdown">
+			<div class="dropdown__header" (click)="selectDropdown('available')">
+				<div class="dropdown__title">Наявність в offline-просторі</div>
+
+				<img src="assets/icons/arrow.svg" alt="" class="dropdown__arrow" [ngClass]="{ 'dropdown__arrow--open': this.openedDropdown === 'available' }">
+			</div>
+
+			<div class="dropdown__content" [ngClass]="{ 'dropdown__content--show': this.openedDropdown === 'available' }">
+				<div class="dropdown__item">
+					<div class="dropdown__subtitle">Цей виріб ви можете придбати в нашому просторі у розміра:</div>
+
+					<ul class="dropdown__list">
+						<li class="dropdown__list-item dropdown__list-item--uppercase">xs</li>
+						<li class="dropdown__list-item dropdown__list-item--uppercase">s</li>
+						<li class="dropdown__list-item dropdown__list-item--uppercase">m - останній розмір</li>
+					</ul>
+				</div>
+
+				<div class="dropdown__item">
+					<div class="dropdown__subtitle">Адреса та контакти простору:</div>
+
+					<ul class="dropdown__list dropdown__list--tall">
+						<li class="dropdown__list-item dropdown__list-item--uppercase dropdown__list-item--dark dropdown__list-item--flex">
+							<img src="assets/icons/location-icon.svg" alt="" class="dropdown__list-item-icon">
+
+							<span class="dropdown__list-item--underline">Київ, вул. павла скоропадського, 13</span>
+
+						</li>
+
+						<li class="dropdown__list-item dropdown__list-item--uppercase dropdown__list-item--dark dropdown__list-item--flex">
+							<img src="assets/icons/clock-icon.svg" alt="" class="dropdown__list-item-icon">
+
+							Графік роботи: пн-нд | 10:30 - 20:30
+						</li>
+
+						<li class="dropdown__list-item dropdown__list-item--uppercase dropdown__list-item--dark dropdown__list-item--flex">
+							<img src="assets/icons/phone-icon.svg" alt="" class="dropdown__list-item-icon">
+
+							<span class="dropdown__list-item--underline">+38 (050) 111 11 11</span>
+						</li>
+					</ul>
+				</div>
+
+				<div class="dropdown__item"></div>
+			</div>
+		</div>
+	</div>
+
+	<div class="details__footer">
+		<div class="details__footer-item">
+			<img src="assets/icons/exchange-icon.svg" alt="" class="details__footer-item-icon">
+
+			Обмін та повернення протягом 14 днів
+		</div>
+
+		<div class="details__footer-item">
+			<img src="assets/icons/shopping-bag-icon.svg" alt="" class="details__footer-item-icon">
+
+			Фірмове пакування
+		</div>
+	</div>
+</div>

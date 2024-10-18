@@ -48,11 +48,11 @@
 			</div>
 
 			<div class="item__info-buttons">
-				<button class="item__info-button">обміри виробу</button>
-				<button class="item__info-button">матеріал | догляд</button>
-				<button class="item__info-button">нотатки стиліста</button>
-				<button class="item__info-button">доставка | обмін та повернення</button>
-				<button class="item__info-button">наявність в offline-просторі</button>
+				<button class="item__info-button" (click)="openDetailsSidebar('sizes')">обміри виробу</button>
+				<button class="item__info-button" (click)="openDetailsSidebar('materials')">матеріал | догляд</button>
+				<button class="item__info-button" (click)="openDetailsSidebar('notes')">нотатки стиліста</button>
+				<button class="item__info-button" (click)="openDetailsSidebar('delivery')">доставка | обмін та повернення</button>
+				<button class="item__info-button" (click)="openDetailsSidebar('available')">наявність в offline-просторі</button>
 			</div>
 
 			<div class="item__style-with style-with">
@@ -130,4 +130,13 @@
 			</li>
 		</ul>
 	</div>
+
+	<app-sidebar
+		[isSidebarOpen]="isDetailsSidebarOpen"
+		(onSidebarClose)="closeDetailsSidebar()"
+		[isSidebarWide]="true"
+		[title]="item.title"
+	>
+		<app-details [openedDropdown]="detailsSidebarActiveDropdown"></app-details>
+	</app-sidebar>
 </div>

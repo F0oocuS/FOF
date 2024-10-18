@@ -1,7 +1,7 @@
 <div class="sidebar" [ngClass]="{ 'sidebar--open': isSidebarOpen }">
 	<div class="sidebar__background"></div>
 
-	<div class="sidebar__container">
+	<div class="sidebar__container" [ngClass]="{ 'sidebar__container--wide': isSidebarWide }">
 		<div class="sidebar__header">
 			<div class="sidebar__title">{{ title }}</div>
 
