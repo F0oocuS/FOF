@@ -1,0 +1,203 @@
+<div class="size-guide">
+	<div class="size-guide__header">
+		<div class="size-guide__tab-title" [ngClass]="{ 'size-guide__tab-title--active': activeTab === 'size-grid' }" (click)="selectTab('size-grid')">розмірна сітка</div>
+		<div class="size-guide__tab-title" [ngClass]="{ 'size-guide__tab-title--active': activeTab === 'item-size' }" (click)="selectTab('item-size')">заміри виробу</div>
+		<div class="size-guide__tab-title" [ngClass]="{ 'size-guide__tab-title--active': activeTab === 'size-guide' }" (click)="selectTab('size-guide')">як зробити заміри?</div>
+	</div>
+
+	<div class="size-guide__content">
+		<div class="size-guild__tab-content" *ngIf="activeTab === 'size-grid'">
+			<div class="size-guide__table table">
+				<div class="table__row">
+					<div class="table__cell table__cell--yellow"></div>
+					<div class="table__cell table__cell--title table__cell--blue">xs</div>
+					<div class="table__cell table__cell--title table__cell--blue">s</div>
+					<div class="table__cell table__cell--title table__cell--blue">m</div>
+					<div class="table__cell table__cell--title table__cell--blue">l</div>
+				</div>
+
+				<div class="table__row">
+					<div class="table__cell table__cell--title table__cell--yellow">Груди</div>
+					<div class="table__cell"></div>
+					<div class="table__cell"></div>
+					<div class="table__cell"></div>
+					<div class="table__cell"></div>
+				</div>
+
+				<div class="table__row">
+					<div class="table__cell table__cell--title table__cell--yellow">Талія</div>
+					<div class="table__cell"></div>
+					<div class="table__cell"></div>
+					<div class="table__cell"></div>
+					<div class="table__cell"></div>
+				</div>
+
+				<div class="table__row">
+					<div class="table__cell table__cell--title table__cell--yellow">Стегна</div>
+					<div class="table__cell"></div>
+					<div class="table__cell"></div>
+					<div class="table__cell"></div>
+					<div class="table__cell"></div>
+				</div>
+
+				<div class="table__row">
+					<div class="table__cell table__cell--title table__cell--yellow">Зріст</div>
+					<div class="table__cell">165-168см</div>
+					<div class="table__cell">170-172см</div>
+					<div class="table__cell">173-175см</div>
+					<div class="table__cell">175-177см</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="size-guild__tab-content" *ngIf="activeTab === 'item-size'">
+			<div class="size-guide__table table">
+				<div class="table__row">
+					<div class="table__cell table__cell--yellow table__cell--110"></div>
+					<div class="table__cell table__cell--title table__cell--blue">xs</div>
+					<div class="table__cell table__cell--title table__cell--blue">s</div>
+					<div class="table__cell table__cell--title table__cell--blue">m</div>
+					<div class="table__cell table__cell--title table__cell--blue">l</div>
+				</div>
+
+				<div class="table__row">
+					<div class="table__cell table__cell--title table__cell--yellow table__cell--left table__cell--110">довжина спереду</div>
+					<div class="table__cell"></div>
+					<div class="table__cell"></div>
+					<div class="table__cell"></div>
+					<div class="table__cell"></div>
+				</div>
+
+				<div class="table__row">
+					<div class="table__cell table__cell--title table__cell--yellow table__cell--left table__cell--110">Довжина по спинці</div>
+					<div class="table__cell"></div>
+					<div class="table__cell"></div>
+					<div class="table__cell"></div>
+					<div class="table__cell"></div>
+				</div>
+
+				<div class="table__row">
+					<div class="table__cell table__cell--title table__cell--yellow table__cell--left table__cell--110">Довжина рукаву</div>
+					<div class="table__cell"></div>
+					<div class="table__cell"></div>
+					<div class="table__cell"></div>
+					<div class="table__cell"></div>
+				</div>
+
+				<div class="table__row">
+					<div class="table__cell table__cell--title table__cell--yellow table__cell--left table__cell--110">Напівохват у грудях</div>
+					<div class="table__cell"></div>
+					<div class="table__cell"></div>
+					<div class="table__cell"></div>
+					<div class="table__cell"></div>
+				</div>
+
+				<div class="table__row">
+					<div class="table__cell table__cell--title table__cell--yellow table__cell--left table__cell--110">Напівохват у талії</div>
+					<div class="table__cell"></div>
+					<div class="table__cell"></div>
+					<div class="table__cell"></div>
+					<div class="table__cell"></div>
+				</div>
+
+				<div class="table__row">
+					<div class="table__cell table__cell--title table__cell--yellow table__cell--left table__cell--110">Напівохват у стегнах</div>
+					<div class="table__cell"></div>
+					<div class="table__cell"></div>
+					<div class="table__cell"></div>
+					<div class="table__cell"></div>
+				</div>
+
+				<div class="table__row">
+					<div class="table__cell table__cell--title table__cell--yellow table__cell--left table__cell--110">висота посадки</div>
+					<div class="table__cell"></div>
+					<div class="table__cell"></div>
+					<div class="table__cell"></div>
+					<div class="table__cell"></div>
+				</div>
+			</div>
+		</div>
+
+		<div class="size-guild__tab-content" *ngIf="activeTab === 'size-guide'">
+			<div class="size-guide__table table">
+				<div class="table__row">
+					<div class="table__cell table__cell--title table__cell--blue">
+						Заміри тіла
+					</div>
+				</div>
+
+				<div class="table__row">
+					<div class="table__cell table__cell--no-padding">
+						<div class="table__row">
+							<div class="table__cell table__cell--left">
+								<div class="table__cell-title">охват грудей</div>
+
+								зробіть замір своєї грудної клітини в найширшому місці
+							</div>
+						</div>
+
+						<div class="table__row">
+							<div class="table__cell table__cell--left">
+								<div class="table__cell-title">охват талії</div>
+
+								зробіть замір своєї талії в найвужчому місці, але не щільно натягуючи сантиметр
+							</div>
+						</div>
+
+						<div class="table__row">
+							<div class="table__cell table__cell--left">
+								<div class="table__cell-title">охват стегон</div>
+
+								зробіть замір в найширшій частині стегон, але не щільно натягуючи сантиметр
+							</div>
+						</div>
+					</div>
+
+					<div class="table__cell table__cell--no-padding table__cell--h430">
+						<img src="assets/images/size-guide.png" alt="" class="table__image">
+					</div>
+				</div>
+
+				<div class="table__row">
+					<div class="table__cell table__cell--title table__cell--blue">Заміри виробу</div>
+				</div>
+
+				<div class="table__row">
+					<div class="table__cell table__cell--title table__cell--left table__cell--yellow table__cell--110">Заміри виробу</div>
+					<div class="table__cell table__cell--left">вимірювання проводиться з лицевого боку виробу згідно схеми</div>
+					<div class="table__cell"></div>
+				</div>
+
+				<div class="table__row">
+					<div class="table__cell table__cell--title table__cell--left table__cell--yellow table__cell--110">довжина рукава</div>
+					<div class="table__cell table__cell--left">вимірювання проводиться на зовнішній стороні рукава від плечового шва до закінчення рукава</div>
+					<div class="table__cell"></div>
+				</div>
+
+				<div class="table__row">
+					<div class="table__cell table__cell--title table__cell--left table__cell--yellow table__cell--110">довжина спереду</div>
+					<div class="table__cell table__cell--left">вимірювання проводиться на лицевій стороні, від верхньої точки плеча до низу виробу</div>
+					<div class="table__cell"></div>
+				</div>
+
+				<div class="table__row">
+					<div class="table__cell table__cell--title table__cell--left table__cell--yellow table__cell--110">Напівохват талії</div>
+					<div class="table__cell table__cell--left">вимірювання проводиться в тому місці, де передбачена посадка талії, як правило, це найвужча частина виробу. вимірюємо від крайньої лівої точки до крайньої правої точки лінії талії</div>
+					<div class="table__cell"></div>
+				</div>
+
+				<div class="table__row">
+					<div class="table__cell table__cell--title table__cell--left table__cell--yellow table__cell--110">Напівохват стегон</div>
+					<div class="table__cell table__cell--left">вимірювання проводиться в найширшій частині стегон від крайньої лівої точки до крайньої правої</div>
+					<div class="table__cell"></div>
+				</div>
+
+				<div class="table__row">
+					<div class="table__cell table__cell--title table__cell--left table__cell--yellow table__cell--110">довжина штанини</div>
+					<div class="table__cell table__cell--left">вимірювання проводиться за зовнішнім боковим швом виробу від крайньої верхньої точки до крайньої нижної</div>
+					<div class="table__cell"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

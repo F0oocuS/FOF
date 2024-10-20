@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 
@@ -11,7 +11,7 @@ import { RouterLink } from '@angular/router';
 })
 export class DetailsComponent {
 	@Input() openedDropdown: string = '';
-	// public openedDropdown: string = '';
+	@Output() onSizeGuideOpen = new EventEmitter<boolean>;
 
 	public selectDropdown(dropdownName: string): void {
 		if (dropdownName === this.openedDropdown) {
@@ -19,5 +19,9 @@ export class DetailsComponent {
 		} else {
 			this.openedDropdown = dropdownName;
 		}
+	}
+
+	public openSizeGuide() {
+		this.onSizeGuideOpen.emit(true);
 	}
 }

@@ -135,8 +135,14 @@
 		[isSidebarOpen]="isDetailsSidebarOpen"
 		(onSidebarClose)="closeDetailsSidebar()"
 		[isSidebarWide]="true"
-		[title]="item.title"
+		[title]="!isSizeGuideActive ? item.title : 'Size guide'"
 	>
-		<app-details [openedDropdown]="detailsSidebarActiveDropdown"></app-details>
+		<ng-container *ngIf="!isSizeGuideActive; else sizeGuide">
+			<app-details [openedDropdown]="detailsSidebarActiveDropdown" (onSizeGuideOpen)="openSizeGuide()"></app-details>
+		</ng-container>
+
+		<ng-template #sizeGuide>
+			<app-size-guide></app-size-guide>
+		</ng-template>
 	</app-sidebar>
 </div>

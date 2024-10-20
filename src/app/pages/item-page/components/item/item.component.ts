@@ -4,11 +4,12 @@ import { RouterLink } from '@angular/router';
 import { CardComponent } from '../../../../shared/components/card/card.component';
 import { SidebarComponent } from '../../../../shared/components/sidebar/sidebar.component';
 import { DetailsComponent } from '../details/details.component';
+import { SizeGuideComponent } from '../size-guide/size-guide.component';
 
 @Component({
 	selector: 'app-item',
 	standalone: true,
-	imports: [CommonModule, RouterLink, CardComponent, SidebarComponent, DetailsComponent],
+	imports: [CommonModule, RouterLink, CardComponent, SidebarComponent, DetailsComponent, SizeGuideComponent],
 	templateUrl: './item.component.html',
 	styleUrl: './item.component.scss'
 })
@@ -16,6 +17,7 @@ export class ItemComponent {
 	@Input() item: any;
 
 	public isDetailsSidebarOpen: boolean = false;
+	public isSizeGuideActive: boolean = false;
 	public detailsSidebarActiveDropdown: string = '' // can be 'sizes' | 'materials' | 'notes' | 'delivery' | 'available'
 
 	public activeSize: any = null;
@@ -45,7 +47,16 @@ export class ItemComponent {
 	}
 
 	public closeDetailsSidebar(): void {
-		this.isDetailsSidebarOpen = false;
-		this.detailsSidebarActiveDropdown = '';
+		if (this.isSizeGuideActive) {
+			this.isSizeGuideActive = false;
+			this.detailsSidebarActiveDropdown = 'sizes';
+		} else {
+			this.isDetailsSidebarOpen = false;
+			this.detailsSidebarActiveDropdown = '';
+		}
+	}
+
+	public openSizeGuide(): void {
+		this.isSizeGuideActive = true;
 	}
 }
