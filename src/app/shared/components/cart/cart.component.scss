@@ -1,0 +1,124 @@
+.cart {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+
+	&__content {
+		display: flex;
+		flex-direction: column;
+		gap: 30px;
+		flex-grow: 1;
+		overflow-y: auto;
+	}
+
+	&__title {
+		margin-bottom: 25px;
+		font-family: 'Charpentier-45-Leger', sans-serif;
+		font-size: 15px;
+		font-weight: 600;
+		line-height: 20px;
+		letter-spacing: 0.07em;
+		color: #59351d;
+		text-transform: uppercase;
+	}
+
+	&__text {
+		margin-bottom: 8px;
+		font-family: 'ProximaNova-Light', sans-serif;
+		font-size: 14px;
+		font-weight: 300;
+		line-height: 20px;
+		letter-spacing: 0.03em;
+		color: #836c5d;
+	}
+
+	&__list {
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+	}
+
+	&__footer {
+		display: flex;
+		flex-direction: column;
+		gap: 15px;
+	}
+
+	&__total-price {
+		padding-top: 10px;
+		display: flex;
+		align-items: flex-start;
+		justify-content: space-between;
+		border-top: 1px solid #dedede;
+	}
+
+	&__price-title {
+		margin-bottom: 5px;
+		font-family: 'ProximaNova-Regular', sans-serif;
+		font-size: 12px;
+		font-weight: 400;
+		line-height: 16px;
+		letter-spacing: 0.07em;
+		color: #59351d;
+		text-transform: uppercase;
+	}
+
+	&__pay-delivery {
+		font-family: 'ProximaNova-Regular', sans-serif;
+		font-size: 8px;
+		font-weight: 400;
+		line-height: 12px;
+		letter-spacing: 0.05em;
+		color: #9c877a;
+		text-transform: uppercase;
+	}
+
+	&__price {
+		font-family: 'ProximaNova-Semibold', sans-serif;
+		font-size: 14px;
+		font-weight: 600;
+		line-height: 16px;
+		letter-spacing: 0.05em;
+		color: #59351d;
+		text-transform: uppercase;
+	}
+
+	&__button {
+		padding: 18px;
+		width: 100%;
+		font-family: 'ProximaNova-Regular', sans-serif;
+		font-size: 12px;
+		font-weight: 400;
+		line-height: 16px;
+		letter-spacing: 0.07em;
+		color: #fefefe;
+		text-transform: uppercase;
+		text-align: center;
+		border: none;
+		background-color: #59351d;
+		cursor: pointer;
+	}
+}
+
+.recommendation {
+	&__title {
+		margin-bottom: 15px;
+		font-family: 'Charpentier-45-Leger', sans-serif;
+		font-size: 15px;
+		font-weight: 400;
+		line-height: 20px;
+		letter-spacing: 0.07em;
+		color: #59351d;
+		text-transform: uppercase;
+	}
+
+	&__list {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 4px;
+	}
+
+	&__item {
+		width: calc(50% - 4px / 2);
+	}
+}

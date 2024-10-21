@@ -29,7 +29,6 @@
 
 	&__content {
 		padding-top: 30px;
-		height: 1000px;
 		width: 100%;
 	}
 
@@ -297,18 +296,97 @@
 }
 
 @media(max-width: 767px) {
+	.item {
+ 		padding-bottom: 47px;
+		gap: 40px;
+		position: relative;
+
+		&__container {
+			padding: 0;
+			flex-direction: column;
+			gap: 12px;
+		}
+
+		&__images-container {
+			margin-right: -15px;
+			margin-left: -15px;
+			// TODO temporary solution or NOT
+			width: calc(100% + 30px);
+		}
+
+		&__image-container {
+			height: 480px;
+
+			&:not(:first-child) {
+				display: none;
+			}
+		}
+
+		&__image {
+			object-fit: contain;
+		}
+
+		&__content {
+			padding-top: 0;
+		}
+
+		&__title {
+			margin-bottom: 8px;
+			font-family: 'ProximaNova-Regular', sans-serif;
+			font-size: 12px;
+			line-height: 16px;
+		}
+
+		&__price {
+			margin-bottom: 15px;
+		}
+
+		&__colors {
+			margin-bottom: 20px;
+		}
+
+		&__sizes {
+			margin-bottom: 20px;
+		}
+
+		&__button {
+			margin-bottom: 0;
+			position: fixed;
+			left: 0;
+			bottom: 0;
+			z-index: 100;
+		}
+
+		&__info-buttons {
+			margin-bottom: 0;
+		}
+
+		&__style-with {
+			display: none;
+		}
+	}
+
+	.sizes {
+		&__item {
+			flex: 1;
+		}
+	}
+
 	.recommendation {
 		&__title {
 			font-size: 15px;
-			line-height: 18;
+			line-height: 18px;
 		}
 
 		&__list {
+			margin-right: -15px;
+			margin-left: -15px;
 			flex-wrap: wrap;
+			gap: 7px;
 		}
 
 		&__item {
-			width: 50%;
+			width: calc(50% - 7px / 2);
 		}
 	}
 }

@@ -10,3 +10,15 @@
 		margin-bottom: 30px;
 	}
 }
+
+@media(max-width: 767px) {
+	.item-page {
+		&__container {
+			padding: 10px 15px 0;
+		}
+
+		&__breadcrumbs {
+			margin-bottom: 15px;
+		}
+	}
+}

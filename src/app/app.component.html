@@ -5,5 +5,9 @@
 		<router-outlet></router-outlet>
 	</main>
 
+	<app-sidebar [title]="'Кошик'" [isSidebarOpen]="isCartSidebarOpen" (onSidebarClose)="closeCartSidebar()">
+		<app-cart></app-cart>
+	</app-sidebar>
+
 	<app-footer class="app__footer"></app-footer>
 </div>

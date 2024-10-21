@@ -29,3 +29,11 @@
 		transform: rotate(-90deg);
 	}
 }
+
+@media(max-width: 767px) {
+	.breadcrumbs {
+		&__link {
+			font-size: 8px;
+		}
+	}
+}

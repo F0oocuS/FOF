@@ -1,0 +1,47 @@
+<div class="cart">
+	<div class="cart__content">
+		<div class="cart__empty" *ngIf="!cart.length">
+			<div class="cart__title">Ваш кошик поки що порожній!</div>
+
+			<p class="cart__text">Додайте вироби, які вам сподобалися, і поверніться для завершення покупки!</p>
+
+			<p class="cart__text">З повагою, команда FOF</p>
+		</div>
+
+		<ul class="cart__list" *ngIf="cart.length">
+			<ng-container *ngFor="let item of cart;">
+				<li class="cart__item">
+					<app-card-horizontal [item]="item"></app-card-horizontal>
+				</li>
+			</ng-container>
+		</ul>
+
+		<div class="card__recommendation recommendation" *ngIf="cart.length ">
+			<div class="recommendation__title">також вас може зацікавити</div>
+
+			<ul class="recommendation__list">
+				<ng-container *ngFor="let item of cart;">
+					<li class="recommendation__item">
+						<app-card [item]="item" [isSmallView]="true"></app-card>
+					</li>
+				</ng-container>
+			</ul>
+		</div>
+	</div>
+
+	<div class="cart__footer">
+		<div class="cart__total-price" *ngIf="cart.length">
+			<div class="cart__total-price-texts">
+				<div class="cart__price-title">Загальна сума</div>
+
+				<div class="cart__pay-delivery">без урахування доставки</div>
+			</div>
+
+			<div class="cart__price">
+				123123 uah
+			</div>
+		</div>
+
+		<button class="cart__button">{{ cart.length ? 'оформити замовлення' : 'Додати товари' }}</button>
+	</div>
+</div>

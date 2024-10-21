@@ -3,6 +3,7 @@ import { RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { SidebarComponent } from '../sidebar/sidebar.component';
 import { SearchComponent } from '../search/search.component';
+import { CartStateService } from '../../../core/services/cart-state.service';
 
 @Component({
 	selector: 'app-header',
@@ -32,8 +33,9 @@ export class HeaderComponent {
 
 	public isSearchSidebarOpen = false;
 
+	constructor(private cartStateService: CartStateService) {}
+
 	public toggleMenu(): void {
-		console.log(this.isOpenMenu);
 		this.isOpenMenu = !this.isOpenMenu;
 	}
 
@@ -45,7 +47,14 @@ export class HeaderComponent {
 		this.isSearchSidebarOpen = false;
 	}
 
+	// TODO need to separate search into own service and open|close it from it
 	public openSearchSidebar(): void {
 		this.isSearchSidebarOpen = true;
 	}
+
+	public openCartSidebar(): void {
+		this.cartStateService.setCartSidebarState(true);
+	}
+
+
 }

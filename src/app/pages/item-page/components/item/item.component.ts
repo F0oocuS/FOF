@@ -5,6 +5,7 @@ import { CardComponent } from '../../../../shared/components/card/card.component
 import { SidebarComponent } from '../../../../shared/components/sidebar/sidebar.component';
 import { DetailsComponent } from '../details/details.component';
 import { SizeGuideComponent } from '../size-guide/size-guide.component';
+import { CartStateService } from '../../../../core/services/cart-state.service';
 
 @Component({
 	selector: 'app-item',
@@ -33,6 +34,8 @@ export class ItemComponent {
 		{ text: 'Акуратна форма лацканів' }
 	];
 
+	constructor(private cartStateService: CartStateService) {}
+
 	public selectColor(color: any) {
 		this.activeColor = color;
 	}
@@ -58,5 +61,11 @@ export class ItemComponent {
 
 	public openSizeGuide(): void {
 		this.isSizeGuideActive = true;
+	}
+
+	public addToCart(): void {
+		// TODO request for send item to cart;
+		this.cartStateService.setCartState(this.item);
+		this.cartStateService.setCartSidebarState(true);
 	}
 }
